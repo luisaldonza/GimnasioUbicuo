@@ -1,0 +1,145 @@
+#
+# generated on 2016/03/30 08:59:24
+#
+# --table-start--
+dataClass=es.uva.inf.gimnasioubicuo.modelo.Ejercicio
+tableName=ejercicio
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=nombre
+# --field-end--
+# --field-start--
+fieldName=maquina
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=es.uva.inf.gimnasioubicuo.modelo.EjercicioEnRutina
+tableName=ejercicio_en_rutina
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=peso
+# --field-end--
+# --field-start--
+fieldName=repeticiones
+# --field-end--
+# --field-start--
+fieldName=ejercicio
+columnName=ejercicio_id
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=rutina
+columnName=rutina_id
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=es.uva.inf.gimnasioubicuo.modelo.Maquina
+tableName=maquina
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=nombre
+# --field-end--
+# --field-start--
+fieldName=codigoQR
+columnName=codigo_qr
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=es.uva.inf.gimnasioubicuo.modelo.ResultadoEjercicio
+tableName=resultadoejercicio
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=repeticionesRealizadas
+columnName=repeticiones_realizadas
+# --field-end--
+# --field-start--
+fieldName=sesion
+columnName=sesion_id
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=ejercicioEnRutina
+columnName=ejercicio_en_rutina_id
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=es.uva.inf.gimnasioubicuo.modelo.Rutina
+tableName=rutina
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=nombre
+# --field-end--
+# --field-start--
+fieldName=descripcion
+# --field-end--
+# --field-start--
+fieldName=repeticiones
+# --field-end--
+# --field-start--
+fieldName=ejerciciosEnRutina
+foreignCollection=true
+foreignCollectionEager=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=es.uva.inf.gimnasioubicuo.modelo.Sesion
+tableName=sesion
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=fecha
+# --field-end--
+# --field-start--
+fieldName=rutina
+columnName=rutina_id
+foreign=true
+foreignAutoRefresh=true
+# --field-end--
+# --field-start--
+fieldName=resultadosEjercicios
+foreignCollection=true
+foreignCollectionEager=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

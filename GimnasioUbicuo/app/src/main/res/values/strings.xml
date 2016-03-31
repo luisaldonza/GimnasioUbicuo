@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Gimnasio Ubicuo</string>
+    <string name="action_settings">Settings</string>
+    <string name="bienvenida">"¡Bienvenido al tu Gimnasio Ubicuo!"</string>
+    <string name="iniciarRutina">Iniciar rutina</string>
+    <string name="cabeceraRutina">Tu rutina diaria:</string>
+    <string name="botonCamara">Iniciar ejercicio</string>
+    <string name="hacerFoto">Capturar</string>
+    <string name="cabeceraInformacion"><b>Información del ejercicio</b></string>
+    <string name="dificultadEjercicio">Grado de dificultad :</string>
+    <string name="numRepeticiones">Número de repeticiones :</string>
+    <string name="masInfo">Observaciones :</string>
+
+    <string name="pedirDatos">Introduce el número de repeticiones realizadas :</string>
+    <string name="aceptar">Aceptar</string>
+
+    <string name="ninguna">Ninguna</string>
+
+    <!--Grados de dificultad-->
+    <string name="gradoFacil">Fácil</string>
+    <string name="gradoMedio">Media</string>
+    <string name="gradoDificil">Difícil</string>
+
+    <!--Nombres de los ejercicios-->
+    <string name="ejercicio_1">Ejercicio 1</string>
+    <string name="ejercicio_2">Ejercicio 2</string>
+    <string name="ejercicio_3">Ejercicio 3</string>
+    <string name="ejercicio_4">Ejercicio 4</string>
+    <string name="ejercicio_5">Ejercicio 5</string>
+    <string name="ejercicio_6">Ejercicio 6</string>
+    <string name="ejercicio_7">Ejercicio 7</string>
+    <string name="ejercicio_8">Ejercicio 8</string>
+    <string name="ejercicio_9">Ejercicio 9</string>
+    <string name="ejercicio_10">Ejercicio 10</string>
+
+    <string name="rutinaCompletada">¡Has completado tu rutina diaria!\nTe esperamos mañana</string>
+
+</resources>
