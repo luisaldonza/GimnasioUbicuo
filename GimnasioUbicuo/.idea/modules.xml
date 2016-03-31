@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/GimnasioUbicuo.iml" filepath="$PROJECT_DIR$/GimnasioUbicuo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/generador-fuentes/generador-fuentes.iml" filepath="$PROJECT_DIR$/generador-fuentes/generador-fuentes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generador-fuentes/generador-fuentes.iml" filepath="$PROJECT_DIR$/generador-fuentes/generador-fuentes.iml" />
     </modules>
   </component>
 </project>
