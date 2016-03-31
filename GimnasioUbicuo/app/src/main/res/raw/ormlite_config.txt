@@ -1,5 +1,5 @@
 #
-# generated on 2016/03/30 08:59:24
+# generated on 2016/03/31 07:40:37
 #
 # --table-start--
 dataClass=es.uva.inf.gimnasioubicuo.modelo.Ejercicio
@@ -106,9 +106,6 @@ fieldName=nombre
 # --field-end--
 # --field-start--
 fieldName=descripcion
-# --field-end--
-# --field-start--
-fieldName=repeticiones
 # --field-end--
 # --field-start--
 fieldName=ejerciciosEnRutina

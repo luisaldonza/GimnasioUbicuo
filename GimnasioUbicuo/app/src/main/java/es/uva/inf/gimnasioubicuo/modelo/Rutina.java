@@ -21,8 +21,6 @@ public class Rutina {
     @DatabaseField
     private String descripcion;
 
-    @DatabaseField
-    private int repeticiones;
 
     @ForeignCollectionField(eager = true)
     private ForeignCollection<EjercicioEnRutina> ejerciciosEnRutina;
@@ -31,8 +29,7 @@ public class Rutina {
     public Rutina() {
     }
 
-    public Rutina(int repeticiones, String nombre, String descripcion) {
-        this.repeticiones = repeticiones;
+    public Rutina(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
@@ -58,13 +55,6 @@ public class Rutina {
         this.descripcion = descripcion;
     }
 
-    public int getRepeticiones() {
-        return repeticiones;
-    }
-
-    public void setRepeticiones(int repeticiones) {
-        this.repeticiones = repeticiones;
-    }
 
     public ForeignCollection<EjercicioEnRutina> getEjerciciosEnRutina() {
         return ejerciciosEnRutina;

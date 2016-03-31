@@ -29,12 +29,12 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
     /**
      * The data access object used to interact with the Sqlite database to do C.R.U.D operations.
      */
-    private MaquinaDao maquinaDao;
-    private EjercicioDao ejercicioDao;
-    private EjercicioEnRutinaDao ejercicioEnRutinaDao;
-    private ResultadoEjercicioDao resultadoEjercicioDao;
-    private RutinaDao rutinaDao;
-    private SesionDao sesionDao;
+    private Dao<Maquina,Long> maquinaDao;
+    private Dao<Ejercicio,Long> ejercicioDao;
+    private Dao<EjercicioEnRutina,Long> ejercicioEnRutinaDao;
+    private Dao<ResultadoEjercicio,Long> resultadoEjercicioDao;
+    private Dao<Rutina,Long> rutinaDao;
+    private Dao<Sesion,Long> sesionDao;
 
 
     public DataBaseHelper(Context context) {
@@ -54,11 +54,44 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, ResultadoEjercicio.class);
             TableUtils.createTable(connectionSource, Sesion.class);
 
+            // carga inicial de datos
+            cargarDatosInicialesBD();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+
+    /**
+     * Realiza la carga inicial de los datos de la app
+     * @throws SQLException
+     */
+    private void cargarDatosInicialesBD() throws SQLException {
+
+        // creamos máquinas
+        getMaquinaDao().create(new Maquina("Banco de press banca","codigoQr1")); //TODO extraer estos strings.
+        getMaquinaDao().create(new Maquina("Mancuernas","codigoQrMancuernas"));
+        getMaquinaDao().create(new Maquina("Polea alta","codigoQrPoleaAlta"));
+
+         // creamos ejercicios
+        getEjercicioDao().create(new Ejercicio("Press de banca",getMaquinaDao().queryForId(new Long(1))));
+        getEjercicioDao().create(new Ejercicio("Concentradas",getMaquinaDao().queryForId(new Long(2))));
+        getEjercicioDao().create(new Ejercicio("Jalones al pecho",getMaquinaDao().queryForId(new Long(3))));
+
+        // creamos rutina
+        getRutinaDao().create(new Rutina("Rutina de volumen","Rutina de volumen"));
+
+        // creamos ejercicios en rutina
+        getEjercicioEnRutinaDao().create(
+                new EjercicioEnRutina(60,15,getEjercicioDao().queryForId(new Long(1)),getRutinaDao().queryForId(new Long(1))));
+        getEjercicioEnRutinaDao().create(
+                new EjercicioEnRutina(15,20,getEjercicioDao().queryForId(new Long(2)),getRutinaDao().queryForId(new Long(2))));
+        getEjercicioEnRutinaDao().create(
+                new EjercicioEnRutina(55,15,getEjercicioDao().queryForId(new Long(3)),getRutinaDao().queryForId(new Long(3))));
+
+    }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource,
@@ -81,14 +114,14 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
-    public EjercicioDao getEjercicioDao() throws SQLException {
+    public Dao<Ejercicio,Long> getEjercicioDao() throws SQLException {
         if (ejercicioDao == null) {
             ejercicioDao = getDao(Ejercicio.class);
         }
         return ejercicioDao;
     }
 
-    public EjercicioEnRutinaDao getEjercicioEnRutinaDao() throws SQLException {
+    public Dao<EjercicioEnRutina,Long> getEjercicioEnRutinaDao() throws SQLException {
         if (ejercicioEnRutinaDao == null) {
             ejercicioEnRutinaDao = getDao(EjercicioEnRutina.class);
         }
@@ -104,21 +137,21 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
 
-    public ResultadoEjercicioDao getResultadoEjercicioDao() throws SQLException {
+    public Dao<ResultadoEjercicio,Long> getResultadoEjercicioDao() throws SQLException {
         if (resultadoEjercicioDao == null) {
             resultadoEjercicioDao = getDao(ResultadoEjercicio.class);
         }
         return resultadoEjercicioDao;
     }
 
-    public RutinaDao getRutinaDao() throws SQLException {
+    public Dao<Rutina,Long> getRutinaDao() throws SQLException {
         if (rutinaDao == null) {
             rutinaDao = getDao(Rutina.class);
         }
         return rutinaDao;
     }
 
-    public SesionDao getSesionDao() throws SQLException {
+    public Dao<Sesion, Long> getSesionDao() throws SQLException {
         if (sesionDao == null) {
             sesionDao = getDao(Sesion.class);
         }
