@@ -83,12 +83,15 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
         getRutinaDao().create(new Rutina("Rutina de volumen","Rutina de volumen"));
 
         // creamos ejercicios en rutina
+
+        Rutina rutina1 = getRutinaDao().queryForId(new Long(1));
+
         getEjercicioEnRutinaDao().create(
-                new EjercicioEnRutina(60,15,getEjercicioDao().queryForId(new Long(1)),getRutinaDao().queryForId(new Long(1))));
+                new EjercicioEnRutina(60,15,getEjercicioDao().queryForId(new Long(1)),rutina1));
         getEjercicioEnRutinaDao().create(
-                new EjercicioEnRutina(15,20,getEjercicioDao().queryForId(new Long(2)),getRutinaDao().queryForId(new Long(2))));
+                new EjercicioEnRutina(15,20,getEjercicioDao().queryForId(new Long(2)),rutina1));
         getEjercicioEnRutinaDao().create(
-                new EjercicioEnRutina(55,15,getEjercicioDao().queryForId(new Long(3)),getRutinaDao().queryForId(new Long(3))));
+                new EjercicioEnRutina(55,15,getEjercicioDao().queryForId(new Long(3)),rutina1));
 
     }
 

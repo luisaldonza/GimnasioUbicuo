@@ -3,12 +3,19 @@
     <string name="action_settings">Settings</string>
     <string name="bienvenida">"¡Bienvenido al tu Gimnasio Ubicuo!"</string>
     <string name="iniciarRutina">Iniciar rutina</string>
-    <string name="cabeceraRutina">Tu rutina diaria:</string>
+    <string name="cabeceraRutina">Tu rutina:</string>
+    <string name="botonIniciarSesion">Iniciar</string>
+    <string name="botonFinalizarSesion">Finalizar</string>
     <string name="botonCamara">Iniciar ejercicio</string>
+
     <string name="hacerFoto">Capturar</string>
     <string name="cabeceraInformacion"><b>Información del ejercicio</b></string>
     <string name="dificultadEjercicio">Grado de dificultad :</string>
     <string name="numRepeticiones">Número de repeticiones :</string>
+    <string name="peso">Peso :</string>
+    <string name="nombreMaquina">Máquina:</string>
+
+
     <string name="masInfo">Observaciones :</string>
 
     <string name="pedirDatos">Introduce el número de repeticiones realizadas :</string>
