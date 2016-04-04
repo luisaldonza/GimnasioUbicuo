@@ -27,7 +27,9 @@
             android:id="@+id/button_comenzar_sesion"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:layout_gravity="top" />
+            android:layout_gravity="top"
+            android:onClick="onClickIniciarRutina"
+            android:nestedScrollingEnabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -36,7 +38,9 @@
             android:id="@+id/button_nuevo_ejercicio"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:layout_gravity="top" />
+            android:layout_gravity="top"
+            android:onClick="onClickIniciarEjercicio"
+            android:nestedScrollingEnabled="false" />
 
         <Button
             android:layout_width="wrap_content"
@@ -45,7 +49,8 @@
             android:id="@+id/button_finalizar_sesion"
             android:layout_margin="2dp"
             android:layout_weight="1"
-            android:layout_gravity="top" />
+            android:layout_gravity="top"
+            android:onClick="onClickFinalizarRutina" />
 
     </LinearLayout>
 

@@ -23,8 +23,7 @@ import es.uva.inf.gimnasioubicuo.modelo.Rutina;
 /**
  * Created by Diego on 02/04/2016.
  */
-public class ListaEjerciciosAdaptador extends BaseAdapter
-{
+public class ListaEjerciciosAdaptador extends BaseAdapter {
 
     private Activity activity;
     private Long rutinaId;
@@ -56,7 +55,7 @@ public class ListaEjerciciosAdaptador extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = activity.getLayoutInflater();
-        View view = inflater.inflate(R.layout.ejercicio_element_list,null,true);
+        View view = inflater.inflate(R.layout.ejercicio_element_list, null, true);
 
         // nombre de la rutina
         TextView nombreEjerTextView = (TextView) view.findViewById(R.id.textView_nombre_ejercicio_comenzar_rutina);
@@ -78,26 +77,26 @@ public class ListaEjerciciosAdaptador extends BaseAdapter
         return view;
     }
 
-    private List<EjercicioEnRutina> getEjerciciosEnRutina()  {
+    private List<EjercicioEnRutina> getEjerciciosEnRutina() {
 
 
         List<EjercicioEnRutina> listEjercicioEnRutina = null;
 
         DataBaseHelper databaseHelper = OpenHelperManager.getHelper(activity,
                 DataBaseHelper.class);
-        Dao<Rutina,Long> rutinaDao = null;
+        Dao<Rutina, Long> rutinaDao = null;
         try {
             rutinaDao = databaseHelper.getRutinaDao();
 
 
-        Rutina rutina = rutinaDao.queryForId(rutinaId);
-        ForeignCollection<EjercicioEnRutina> ejerciciosEnRutina = rutina.getEjerciciosEnRutina();
+            Rutina rutina = rutinaDao.queryForId(rutinaId);
+            ForeignCollection<EjercicioEnRutina> ejerciciosEnRutina = rutina.getEjerciciosEnRutina();
 
-        EjercicioEnRutina[] arrayEjercicioEnRutina = new EjercicioEnRutina[ejerciciosEnRutina.size()];
+            EjercicioEnRutina[] arrayEjercicioEnRutina = new EjercicioEnRutina[ejerciciosEnRutina.size()];
 
-        arrayEjercicioEnRutina = ejerciciosEnRutina.toArray(arrayEjercicioEnRutina);
-        listEjercicioEnRutina = new ArrayList<EjercicioEnRutina>();
-        listEjercicioEnRutina.addAll(ejerciciosEnRutina);
+            arrayEjercicioEnRutina = ejerciciosEnRutina.toArray(arrayEjercicioEnRutina);
+            listEjercicioEnRutina = new ArrayList<EjercicioEnRutina>();
+            listEjercicioEnRutina.addAll(ejerciciosEnRutina);
 
         } catch (SQLException e) {
             e.printStackTrace();
